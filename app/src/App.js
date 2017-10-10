@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
+import Router from './Router';
+import Button from 'antd/lib/button';
+import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div><h1>Header</h1></div>
-    );
-  }
-}
+const App = () => (
+  <div>
+    <Router />
+    <Button type = "primary">Button</Button>
+  </div>
+);
 
 export default App;
