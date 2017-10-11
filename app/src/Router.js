@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ContactList from './layouts/ContactList/ContactList';
-import Profile from './layouts/Profile/Profile';
+import ContactList from './layouts/ContactList';
+import Profile from './layouts/Profile';
 
 const Router = () => (
   <main>

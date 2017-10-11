@@ -1,12 +1,13 @@
 import React from 'react';
 import Router from './Router';
-import Button from 'antd/lib/button';
+import Navbar from './components/Navbar';
 import './App.css';
+import { Button } from 'antd';
 
 const App = () => (
   <div>
+    <Navbar />
     <Router />
-    <Button type = "primary">Button</Button>
   </div>
 );
 
