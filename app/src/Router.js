@@ -1,14 +1,14 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
-import ContactListPage from './layouts/ContactListPage/ContactListPage';
-import ProfilePage from './layouts/ProfilePage/ProfilePage';
+import ContactList from './layouts/ContactList/ContactList';
+import Profile from './layouts/Profile/Profile';
 
 const Router = () => (
   <main>
     <Switch>
-      <Route exact path = '/' component = {ContactListPage} />
-      <Route exact path = '/profile' component = {ProfilePage} />
+      <Route exact path = '/' component = {ContactList} />
+      <Route exact path = '/profile' component = {Profile} />
     </Switch>
   </main>
 );

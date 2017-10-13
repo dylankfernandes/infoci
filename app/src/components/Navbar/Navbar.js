@@ -12,13 +12,13 @@ const Navbar = () => (
       defaultOpenKeys={['sub1']}
       mode = "horizontal">
       <Menu.Item key="1" className = "item">
-        <Link to = "/profile"><Icon type="team" /></Link>
+        <Link to = "/"><Icon type="team" /></Link>
       </Menu.Item>
       <Menu.Item key="2" className = "item">
         <Link to = "/"><Icon type="inbox" /></Link>
       </Menu.Item>
       <Menu.Item key="3" className = "item">
-        <Link to = "/"><Icon type="home" /></Link>
+        <Link to = "/profile"><Icon type="home" /></Link>
       </Menu.Item>
       <Menu.Item key="4" className = "item">
         <Link to = "/"><Icon type="environment" /></Link>
