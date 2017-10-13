@@ -1,13 +1,25 @@
 import React from 'react';
-import Router from './Router';
-import Navbar from './components/Navbar';
-import './App.css';
 import { Button } from 'antd';
+import { Layout } from 'antd';
+
+import Router from './Router';
+import Navbar from './components/Navbar/Navbar';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 const App = () => (
   <div>
-    <Navbar />
-    <Router />
+    <Layout>
+      <Navbar />
+      <Layout>
+        <Sider>
+          Sider
+        </Sider>
+        <Content>
+          <Router />
+        </Content>
+      </Layout>
+    </Layout>
   </div>
 );
 
