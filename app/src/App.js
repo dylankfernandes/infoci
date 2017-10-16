@@ -12,21 +12,7 @@ const App = () => (
   <div>
     <Layout>
       <Navbar />
-
-      <Layout className = "container">
-        <Content>
-          <Router />
-          <Button 
-            type="primary" 
-            shape="circle" 
-            icon="plus" 
-            className = "add-contact" 
-            size = "large">
-            <Link to = "/contacts/add"></Link>
-          </Button>
-        </Content>
-      </Layout>
-
+      <Router />
     </Layout>
   </div>
 );

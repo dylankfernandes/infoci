@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import BASE_URL from '../../config';
-import { Menu, Icon, Switch } from 'antd';
+import { Menu, Icon, Switch, Layout } from 'antd';
+import { Link } from 'react-router-dom';
+import './styles.css';
+const { Sider, Content } = Layout;
 const SubMenu = Menu.SubMenu;
 
 class ContactList extends Component {
@@ -22,14 +25,23 @@ class ContactList extends Component {
   render() {
     const contactList = this.state.contacts.map((contact, i) => {
       return (
-        <li>{contact.firstName}</li>
+        <li className = "contact-list-item">
+          {contact.firstName + " " + contact.lastName}
+          <Icon type = "right" className = "continue"/>
+        </li>
       )
     })
 
     return (
       <div>
-        <h1>Connections</h1>
-        <ul>{contactList}</ul>
+        <Layout>
+          <Sider className = "sidebar" width = {342}>
+            <ul className = "contact-list">{contactList} </ul>
+          </Sider>
+          <Content>
+            <h1>Connections</h1>
+          </Content>
+        </Layout>
       </div>
     )
   }
