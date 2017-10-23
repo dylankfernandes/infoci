@@ -7,7 +7,8 @@
 }
 
 .contact-list {
-  margin-top: 2vh;
+  margin-top: 0vh;
+  padding-top: 2vh;
   margin-bottom: 2vh;
 }
 
@@ -23,6 +24,7 @@
   padding-bottom: 2vh;
   margin-right: 2vw;
   margin-left: 2vw;
+  color: #222;
 }
 
 .contact-list-item:hover {

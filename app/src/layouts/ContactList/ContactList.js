@@ -31,12 +31,14 @@ class ContactList extends Component {
     const contactList = this.state.contacts.map((contact, i) => {
       return (
         <li className = "contact-list-item">
-          <Icon type = "user"/>
-          {" " + contact.firstName + " " + contact.lastName}
-          <Icon type = "right" className = "continue"/>
+          <Link to = {`/contacts/${contact.id}`}>
+            <Icon type = "user"/>
+            {" " + contact.firstName + " " + contact.lastName}
+            <Icon type = "right" className = "continue"/>
+          </Link>
         </li>
       )
-    })
+    });
 
     return (
       <div>

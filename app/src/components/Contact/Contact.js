@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 
 import BASE_URL from '../../config';
+import ContactList from '../../layouts/ContactList/ContactList';
 import './styles.css';
 
 class Contact extends Component {
@@ -12,18 +13,12 @@ class Contact extends Component {
     };
   }
 
-  componentWillMount() {
-    axios.get(BASE_URL + this.props.selected)
-    .then(res => {
-      this.setState({info: res.data})
-    })
-  }
-
   render() {
-    const { firstName, lastName } = this.state.info;
-    
     return (
-      <h1>{firstName}</h1>
+      <div>
+        <ContactList />
+        <h1>Dylan Fernandes</h1>
+      </div>
     )
   }
 }
