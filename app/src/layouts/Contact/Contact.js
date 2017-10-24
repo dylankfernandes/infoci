@@ -15,12 +15,13 @@ class Contact extends Component {
 
   render() {
     return (
-      <div>
-        <ContactList />
-        <h1>Dylan Fernandes</h1>
+      <div className = "contact-container">
+        <h1 className = "title">Dylan Fernandes</h1>
       </div>
     )
   }
 }
+
+
 
 export default Contact;
