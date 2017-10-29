@@ -18,7 +18,7 @@ const Navbar = () => (
         <Link to = "/"><Icon type="inbox" /></Link>
       </Menu.Item>
       <Menu.Item key="3" className = "item">
-        <Link to = "/profile"><Icon type="home" /></Link>
+        <Link to = "/"><Icon type="home" /></Link>
       </Menu.Item>
       <Menu.Item key="4" className = "item">
         <Link to = "/"><Icon type="environment" /></Link>

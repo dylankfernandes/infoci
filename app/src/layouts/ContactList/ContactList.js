@@ -39,7 +39,7 @@ class ContactList extends Component {
 
     return (
       <div>
-        <ul className = "contact-list">{contactList} </ul>
+        <ul className = "contact-list">{contactList}</ul>
       </div>
     )
   }
