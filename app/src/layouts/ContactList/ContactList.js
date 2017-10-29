@@ -22,18 +22,19 @@ class ContactList extends Component {
     .then(res => {
       this.setState({contacts: res.data})
     })
+    .catch(err => console.log(err))
   }
 
   render() {
     const contactList = this.state.contacts.map((contact, i) => {
       return (
-        <li className = "contact-list-item">
-          <Icon type = "user"/>
-          {" " + contact.firstName + " " + contact.lastName}
-          <Link to = {`/contacts/${contact.id}`}>
+        <Link to = {`/contacts/${contact.id}`}>
+          <li className = "contact-list-item">
+            <Icon type = "user"/>
+            {" " + contact.firstName + " " + contact.lastName}
             <Icon type = "right" className = "continue"/>
-          </Link>
-        </li>
+          </li>
+        </Link>
       )
     });
 
