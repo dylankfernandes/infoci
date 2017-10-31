@@ -5,4 +5,5 @@ const fontSizes = {
   title: '32px'
 }
 
+export { fontSizes };
 export default BASE_URL;

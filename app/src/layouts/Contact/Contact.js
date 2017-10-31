@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-import { Link } from 'react-router-dom';
-import { Button, Icon } from 'antd';
+import {
+  BackButton,
+  DeleteButton,
+  EditButton
+} from '../../components/Button/Button';
 
+import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
 
@@ -45,25 +49,12 @@ class Contact extends Component {
       <div className = "contact-container">
         <div class = "edit-group">
           <center>
-            <Link to = "/">
-              <Button size = "large" className = "back-button" type = "primary">
-                <Icon type = "caret-left" />
-                Back
-              </Button>
-            </Link>
-            <Button size = "large" className = "delete-button" type = "danger">
-              <Icon type = "delete" />
-              Delete
-            </Button>
-            <Link to = {`/contacts/edit/${id}`}>
-              <Button size = "large" className = "edit-button">
-                <Icon type = "edit" />
-                Back
-              </Button>
-            </Link>
+            <BackButton />
+            <DeleteButton />
+            <EditButton id = {id} />
           </center>
         </div>
-        <h1 className = "title">{name}</h1>
+        <Header>{name}</Header>
         <p>Phone: {phone}</p>
         <p>Email: {email}</p>
       </div>
