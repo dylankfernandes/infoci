@@ -1,9 +1,8 @@
 import React from 'react';
 import { Menu, Icon } from 'antd';
-import './styles.css';
 import { Link } from 'react-router-dom';
 
-const SubMenu = Menu.SubMenu;
+import './styles.css';
 
 const Navbar = () => (
   <div>

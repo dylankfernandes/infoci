@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Button, Icon, Input, Select } from 'antd';
+import { 
+  Button, 
+  Icon 
+} from 'antd';
+
+import Header from '../../components/Header/Header';
 import './styles.css';
 
 class AddContact extends Component {
@@ -14,7 +19,7 @@ class AddContact extends Component {
             Back
           </Button>
         </Link>
-        <h1>AddContact</h1>
+        <Header>Add Contact</Header>
       </div>
     )
   }

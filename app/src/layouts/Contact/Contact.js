@@ -6,6 +6,8 @@ import {
   DeleteButton,
   EditButton
 } from '../../components/Button/Button';
+
+import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
 
@@ -52,7 +54,7 @@ class Contact extends Component {
             <EditButton id = {id} />
           </center>
         </div>
-        <h1 className = "title">{name}</h1>
+        <Header>{name}</Header>
         <p>Phone: {phone}</p>
         <p>Email: {email}</p>
       </div>

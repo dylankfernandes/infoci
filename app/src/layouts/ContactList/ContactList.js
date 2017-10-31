@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Menu, Icon, Switch, Layout, Button } from 'antd';
+import {
+  Icon,  
+  Button 
+} from 'antd';
 import { Link } from 'react-router-dom';
 
+import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
-
-const { Sider, Content } = Layout;
-const SubMenu = Menu.SubMenu;
 
 class ContactList extends Component {
   constructor(props) {
@@ -41,7 +42,7 @@ class ContactList extends Component {
     return (
       <div>
         <div class = "contact-list-header">
-          <h1>Contacts</h1>
+          <Header className = "contact-list-title">Contacts</Header>
           <Link to = "/contacts/add">
             <Button size = "large" type = "primary">Add Contact <Icon type = "plus"/></Button>
           </Link>
