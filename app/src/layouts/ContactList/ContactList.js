@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Menu, Icon, Switch, Layout } from 'antd';
+import { Menu, Icon, Switch, Layout, Button } from 'antd';
 import { Link } from 'react-router-dom';
 
 import BASE_URL from '../../config';
@@ -40,6 +40,13 @@ class ContactList extends Component {
 
     return (
       <div>
+        <div class = "contact-list-header">
+          <h1>Contacts</h1>
+          <Link to = "/contacts/add">
+            <Button size = "large" type = "primary">Add Contact <Icon type = "plus"/></Button>
+          </Link>
+          <div className="clearfix" />
+        </div>
         <ul className = "contact-list">{contactList}</ul>
       </div>
     )

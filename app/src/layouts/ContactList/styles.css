@@ -12,6 +12,24 @@
   margin-bottom: 2vh;
 }
 
+.contact-list-header {
+  margin-top: 3vh;
+}
+
+.contact-list-header h1 {
+  float: left;
+  margin-left: 2vw;
+}
+
+.contact-list-header Button {
+  float: right;
+  margin-right: 2vw; 
+}
+
+.clearfix {
+  clear: both;
+}
+
 .continue {
   float: right;
   margin-top: 5px;
