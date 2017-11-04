@@ -7,6 +7,7 @@ import {
 } from 'antd';
 
 import Header from '../../components/Header/Header';
+import ContactForm from '../../components/ContactForm/ContactForm';
 import './styles.css';
 
 class AddContact extends Component {
@@ -20,6 +21,7 @@ class AddContact extends Component {
           </Button>
         </Link>
         <Header>Add Contact</Header>
+        <ContactForm />
       </div>
     )
   }
