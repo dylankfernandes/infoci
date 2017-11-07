@@ -10,6 +10,9 @@ import {
   Row, 
   Col,
 } from 'antd';
+import axios from 'axios';
+
+import BASE_URL from '../../config';
 
 class AddContactForm extends Component {
   constructor(props) {
@@ -19,12 +22,38 @@ class AddContactForm extends Component {
     };
   }
 
+  addContact = (contact) => {
+    axios.request({
+      method: 'post',
+      url: `${BASE_URL}/contacts`,
+      data: contact
+    }).then(res => {
+      //this.props.history.push('/')
+    }).catch(err => console.log(err))
+  }
+
+  checkNull(property) {
+    return property ? property.toString() : "dylan"
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
-      if(!err) {
-        console.log('Received values', values)
+      const newContact = {
+        firstName: values.firstName,
+        lastName: values.lastName,
+        email: this.checkNull(values.email),
+        phone: this.checkNull(values.phone),
+        website: this.checkNull(values.website),
+        twitterHandle: this.checkNull(values.twitterHandle),
+        instagramHandle: this.checkNull(values.instagramHandle),
+        snapchatHandle: this.checkNull(values.snapchatHandle),
+        facebookHandle: this.checkNull(values.facebookHandle),
+        location: this.checkNull(values.location),
+        mediumHandle: this.checkNull(values.mediumHandle),
+        relation: this.checkNull(values.relation)
       }
+      this.addContact(newContact);
     });
   }
 
@@ -83,6 +112,6 @@ class AddContactForm extends Component {
   }
 }
 
-const ContactForm = Form.create()(AddContactForm);
+const ContactForm = Form.create({})(AddContactForm);
 
 export default ContactForm;
