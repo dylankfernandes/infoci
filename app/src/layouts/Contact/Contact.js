@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Card, Col, Row } from 'antd';
 
 import {
   BackButton,
@@ -11,6 +12,8 @@ import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
 
+import TwitterCard from '../../components/TwitterCard/TwitterCard';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -20,10 +23,6 @@ class Contact extends Component {
   }
 
   componentWillMount() {
-    this.getUserInfo();
-  }
-
-  getUserInfo() {
     let contactId = this.props.match.params.id;
     axios.get(`${BASE_URL}/contacts/${contactId}`)
     .then(res => {
@@ -40,7 +39,8 @@ class Contact extends Component {
       lastName,
       phone,
       email,
-      id
+      id,
+      twitterHandle
     } = this.state.user;
 
     const name = `${firstName} ${lastName}`;
@@ -54,9 +54,15 @@ class Contact extends Component {
             <EditButton id = {id} />
           </center>
         </div>
-        <Header>{name}</Header>
-        <p>Phone: {phone}</p>
-        <p>Email: {email}</p>
+        <center>
+          <Header>{name}</Header>
+          <p>Phone: {phone}</p>
+          <p>Email: {email}</p>
+          <br/><br/>
+          <hr className = "divider"/>
+        </center>
+        <br/><br/>
+        <TwitterCard />
       </div>
     )
   }

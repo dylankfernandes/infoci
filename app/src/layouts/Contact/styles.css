@@ -17,3 +17,8 @@
 .edit-button {
   float: right;
 }
+
+.divider {
+  width: 75%;
+  color: lightgray;
+}
