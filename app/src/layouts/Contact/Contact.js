@@ -62,12 +62,9 @@ class Contact extends Component {
           <hr className = "divider"/>
         </center>
         <br/><br/>
-        <TwitterCard />
       </div>
     )
   }
 }
-
-
 
 export default Contact;
