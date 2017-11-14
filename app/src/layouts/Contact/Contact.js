@@ -47,7 +47,7 @@ class Contact extends Component {
 
     return (
       <div className = "contact-container">
-        <div class = "edit-group">
+        <div className = "edit-group">
           <center>
             <BackButton />
             <DeleteButton />
