@@ -10,13 +10,15 @@
     "antd": "^2.13.4",
     "axios": "^0.16.2",
     "babel-plugin-import": "^1.6.0",
+    "get-twitter-bearer-token": "^1.0.0",
     "material-ui": "^0.19.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
     "react-tweet": "^1.2.1",
-    "react-twitter-widgets": "^1.7.1"
+    "react-twitter-widgets": "^1.7.1",
+    "request": "^2.83.0"
   },
   "scripts": {
     "start": "set PORT=3001 && react-app-rewired start",
