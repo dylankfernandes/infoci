@@ -23,7 +23,7 @@ class TwitterCard extends Component {
 
     R({ url: url,
       method:'GET',
-      qs:{"screen_name":"mcswaggerins"},
+      qs:{"screen_name":"twitterdev"},
       json:true,
       headers: {
         "Authorization": "Bearer " + BEARER_TOKEN,
@@ -40,7 +40,7 @@ class TwitterCard extends Component {
         <Timeline
           dataSource={{
             sourceType: 'profile',
-            screenName: 'mcswaggerins'
+            screenName: 'twitterdev'
           }}
           options={{
             username: 'TwitterDev',
