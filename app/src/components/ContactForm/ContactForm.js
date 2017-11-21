@@ -11,6 +11,7 @@ import {
   Col,
 } from 'antd';
 import axios from 'axios';
+import { Link, Redirect } from 'react-router-dom';
 import BASE_URL from '../../config';
 
 class AddContactForm extends Component {
@@ -18,6 +19,7 @@ class AddContactForm extends Component {
     super(props);
     this.state = {
       confirmError: false,
+      submitted: false
     };
   }
 
@@ -27,7 +29,9 @@ class AddContactForm extends Component {
       url: `${BASE_URL}/contacts`,
       data: contact
     }).then(res => {
-      //this.props.history.push('/')
+      this.setState({
+        fireRedirect: true
+      })
     }).catch(err => console.log(err))
   }
 
@@ -75,38 +79,43 @@ class AddContactForm extends Component {
     const { getFieldDecorator } = this.props.form;
 
     return (
-      <Form onSubmit = {this.handleSubmit}>
-        <Form.Item label = "First Name" colon = {false}>
-          {getFieldDecorator('firstName', {
-            rules: [{
-              required: true, message: "Please enter this person's first name"
-            }]
-          })(
-            <Input size = "large" className = "add-contact-input"/>
-          )}
-        </Form.Item>
-        <Form.Item label = "Last Name" colon = {false}>
-          {getFieldDecorator('lastName', {
-            rules: [{
-              required: true, message: "Please enter this person's last name"
-            }]
-          })(
-            <Input size = "large" className = "add-contact-input"/>
-          )}
-        </Form.Item>
-        <Form.Item label = "Email" colon = {false} hasFeedback>
-          {getFieldDecorator('email', {
-            rules: [{
-              type: 'email', message: 'The input is not a valid email!'
-            }]
-          })(
-            <Input size = "large" className = "add-contact-input" type = "email" />
-          )}
-        </Form.Item>
-        <Form.Item>
-          <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
-        </Form.Item>
-      </Form>
+      <div>
+        <Form onSubmit = {this.handleSubmit}>
+          <Form.Item label = "First Name" colon = {false}>
+            {getFieldDecorator('firstName', {
+              rules: [{
+                required: true, message: "Please enter this person's first name"
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input"/>
+            )}
+          </Form.Item>
+          <Form.Item label = "Last Name" colon = {false}>
+            {getFieldDecorator('lastName', {
+              rules: [{
+                required: true, message: "Please enter this person's last name"
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input"/>
+            )}
+          </Form.Item>
+          <Form.Item label = "Email" colon = {false} hasFeedback>
+            {getFieldDecorator('email', {
+              rules: [{
+                type: 'email', message: 'The input is not a valid email!'
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" type = "email" />
+            )}
+          </Form.Item>
+          <Form.Item>
+            <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
+          </Form.Item>
+        </Form>
+        {this.state.fireRedirect && (
+          <Redirect to={'/'}/>
+        )}
+      </div>
     )
   }
 }

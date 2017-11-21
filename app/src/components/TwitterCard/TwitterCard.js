@@ -7,7 +7,7 @@ import './style.css';
 const R = require("request");
 const CONSUMER_KEY = 'gfSWnp25JKgvHamqPsWVNoI43';
 const CONSUMER_SECRET = 'cjuQ31Fe0ZA6cMLQB2Zgz9wv5thXs5HNKEJJb4oD7c04B8fZPR';
-const BEARER_TOKEN = 'Z2ZTV25wMjVKS2d2SGFtcVBzV1ZOb0k0MzpjanVRMzFGZTBaQTZjTUxRQjJaZ3o5d3Y1dGhYczVITktFSkpiNG9EN2MwNEI4ZlpQUg==';
+const BEARER_TOKEN = 'AAAAAAAAAAAAAAAAAAAAAICn3AAAAAAAddlSTcarnEbXtkhyYc1pHzVplHk%3D64SrrmqL8PYoHTH9KriQFf4ZHpkACewAL8PVqpSRcwFqxFTV0E';
 
 class TwitterCard extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class TwitterCard extends Component {
       json:true,
       headers: {
         "Authorization": "Bearer " + BEARER_TOKEN,
-        "Access-Control-Allow-Origin": "http://localhost:3001/"
+        "Access-Control-Allow-Origin": "http://localhost:3001"
       }
     }, function(err, resp, body) {
       console.log(body);
