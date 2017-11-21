@@ -41,7 +41,7 @@ class ContactList extends Component {
 
     return (
       <div>
-        <div class = "contact-list-header">
+        <div className = "contact-list-header">
           <Header className = "contact-list-title">Contacts</Header>
           <Link to = "/contacts/add">
             <Button size = "large" type = "primary">Add Contact <Icon type = "plus"/></Button>

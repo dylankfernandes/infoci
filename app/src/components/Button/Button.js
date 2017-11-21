@@ -7,15 +7,22 @@ import { Link } from 'react-router-dom';
 
 const BackButton = () => (
   <Link to = "/">
-    <Button size = "large" className = "back-button" type = "primary">
+    <Button 
+      size = "large" 
+      className = "back-button" 
+      type = "primary">
       <Icon type = "caret-left" />
       Back
     </Button>
   </Link>
 );
 
-const DeleteButton = () => (
-  <Button size = "large" className = "delete-button" type = "danger">
+const DeleteButton = (props) => (
+  <Button 
+    size = "large" 
+    className = "delete-button" 
+    type = "danger"
+    onClick = {props.delete}>
     <Icon type = "delete" />
     Delete
   </Button>

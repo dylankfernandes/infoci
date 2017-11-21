@@ -14,12 +14,13 @@ import axios from 'axios';
 import { Link, Redirect } from 'react-router-dom';
 import BASE_URL from '../../config';
 
-class AddContactForm extends Component {
+class ContactForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
       confirmError: false,
-      submitted: false
+      submitted: false,
+      prefillUser: {}
     };
   }
 
@@ -30,7 +31,7 @@ class AddContactForm extends Component {
       data: contact
     }).then(res => {
       this.setState({
-        fireRedirect: true
+        fireRedirect: true,
       })
     }).catch(err => console.log(err))
   }
@@ -120,6 +121,6 @@ class AddContactForm extends Component {
   }
 }
 
-const ContactForm = Form.create({})(AddContactForm);
+const AddContactForm = Form.create({})(ContactForm);
 
-export default ContactForm;
+export default AddContactForm;

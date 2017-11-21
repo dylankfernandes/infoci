@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, Col, Row } from 'antd';
+import { Redirect } from 'react-router-dom';
 
 import {
   BackButton,
@@ -18,8 +19,20 @@ class Contact extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: {}
+      user: {},
+      fireRedirect: false
     };
+  }
+
+  onDelete = () => {
+    let contactId = this.state.user.id;
+    axios.delete(`${BASE_URL}/contacts/${contactId}`)
+    .then(res => {
+      this.setState({
+        fireRedirect: true
+      })
+    })
+    .catch(err => console.log(err))
   }
 
   componentWillMount() {
@@ -50,7 +63,7 @@ class Contact extends Component {
         <div className = "edit-group">
           <center>
             <BackButton />
-            <DeleteButton />
+            <DeleteButton delete = {this.onDelete.bind(this)}/>
             <EditButton id = {id} />
           </center>
         </div>
@@ -62,7 +75,9 @@ class Contact extends Component {
           <hr className = "divider"/>
         </center>
         <br/><br/>
-        <TwitterCard />
+        {this.state.fireRedirect && (
+          <Redirect to={'/'}/>
+        )}
       </div>
     )
   }

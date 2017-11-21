@@ -7,24 +7,23 @@ import {
 } from 'antd';
 
 import Header from '../../components/Header/Header';
-import AddContactForm from '../../components/AddContactForm/AddContactForm';
-import './styles.css';
+import EditContactForm from '../../components/EditContactForm/EditContactForm';
 
-class AddContact extends Component {
+class EditContact extends Component {
   render() {
     return (
-      <div class = "add-contact-container">
+      <div className = "add-contact-container">
         <Link to = "/">
           <Button size = "large" type = "primary">
             <Icon type = "caret-left" />
             Back
           </Button>
         </Link>
-        <Header>Add Contact</Header>
-        <AddContactForm />
+        <Header>Edit Contact</Header>
+        <EditContactForm id = {this.props.match.params.id} />
       </div>
     )
   }
 }
 
-export default AddContact;
+export default EditContact;
