@@ -40,7 +40,7 @@ class ContactForm extends Component {
   }
 
   checkNull(property) {
-    return property ? property.toString() : "dylan"
+    return property ? property.toString() : "N/A"
   }
 
   handleSubmit = (e) => {
