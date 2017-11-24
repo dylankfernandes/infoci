@@ -27,12 +27,19 @@ class TwitterCard extends Component {
       json:true,
       headers: {
         "Authorization": "Bearer " + BEARER_TOKEN,
-        "Access-Control-Allow-Origin": "https://api.twitter.com",
-        "Content-Type": "application/x-www-form-urlencoded"
+        "Access-Control-Allow-Origin": "http://localhost:3001/contacts/59e141b8de6c3a912c9ad3cc",
+        "Origin": "http://localhost:3001/contacts/59e141b8de6c3a912c9ad3cc",
+        "Access-Control-Allow-Methods": "GET, POST, PUT",        
+        "Access-Control-Allow-Headers": "application/x-www-form-urlencoded"
       }
     }, function(err, resp, body) {
       console.log(body);
     });
+
+    const headers = {
+
+    }
+
   }
 
   render() {

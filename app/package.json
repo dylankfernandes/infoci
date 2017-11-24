@@ -10,6 +10,7 @@
     "antd": "^2.13.4",
     "axios": "^0.16.2",
     "babel-plugin-import": "^1.6.0",
+    "fetch": "^1.1.0",
     "get-twitter-bearer-token": "^1.0.0",
     "material-ui": "^0.19.4",
     "react": "^16.0.0",
