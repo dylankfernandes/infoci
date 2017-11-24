@@ -13,8 +13,6 @@ import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
 
-import TwitterCard from '../../components/TwitterCard/TwitterCard';
-
 class Contact extends Component {
   constructor(props) {
     super(props);
