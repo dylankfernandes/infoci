@@ -10,10 +10,9 @@ import {
 } from '../../components/Button/Button';
 
 import Header from '../../components/Header/Header';
+import TwitterCard from '../../components/TwitterCard/TwitterCard';
 import BASE_URL from '../../config';
 import './styles.css';
-
-import TwitterCard from '../../components/TwitterCard/TwitterCard';
 
 class Contact extends Component {
   constructor(props) {
@@ -67,6 +66,7 @@ class Contact extends Component {
             <EditButton id = {id} />
           </center>
         </div>
+
         <center>
           <Header>{name}</Header>
           <p>Phone: {phone}</p>
@@ -74,6 +74,9 @@ class Contact extends Component {
           <br/><br/>
           <hr className = "divider"/>
         </center>
+        
+        <TwitterCard username = 'twitterdev' />
+
         <br/><br/>
         {this.state.fireRedirect && (
           <Redirect to={'/'}/>

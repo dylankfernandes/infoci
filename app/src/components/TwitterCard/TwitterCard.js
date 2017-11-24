@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Card } from 'antd';
 import { Timeline } from 'react-twitter-widgets';
-import './style.css';
+//import './style.css';
 
 const R = require("request");
 const CONSUMER_KEY = 'gfSWnp25JKgvHamqPsWVNoI43';
@@ -23,11 +23,12 @@ class TwitterCard extends Component {
 
     R({ url: url,
       method:'GET',
-      qs:{"screen_name":"twitterdev"},
+      qs:{"screen_name":"mcswaggerins"},
       json:true,
       headers: {
         "Authorization": "Bearer " + BEARER_TOKEN,
-        "Access-Control-Allow-Origin": "http://localhost:3001"
+        "Access-Control-Allow-Origin": "https://api.twitter.com",
+        "Content-Type": "application/x-www-form-urlencoded"
       }
     }, function(err, resp, body) {
       console.log(body);
@@ -37,17 +38,7 @@ class TwitterCard extends Component {
   render() {
     return (
       <div>
-        <Timeline
-          dataSource={{
-            sourceType: 'profile',
-            screenName: 'twitterdev'
-          }}
-          options={{
-            username: 'TwitterDev',
-            height: '400',
-            width: '50vw'
-          }}
-          onLoad={() => console.log('Timeline is loaded!')} />
+        <h3>{this.state.username}</h3>
       </div>
     )
   }
