@@ -109,6 +109,62 @@ class ContactForm extends Component {
               <Input size = "large" className = "add-contact-input" type = "email" />
             )}
           </Form.Item>
+          <Form.Item label = "Phone Number" colon = {false} hasFeedback>
+            {getFieldDecorator('phone', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+
+          <Form.Item label = "Website" colon = {false}>
+            {getFieldDecorator('website', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Twitter Handle" colon = {false}>
+            {getFieldDecorator('twitterHandle', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Facebook Handle" colon = {false}>
+            {getFieldDecorator('facebookHandle', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Instagram Handle" colon = {false}>
+            {getFieldDecorator('instagramHandle', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Snapchat Handle" colon = {false}>
+            {getFieldDecorator('snapchatHandle', {
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          
           <Form.Item>
             <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
           </Form.Item>

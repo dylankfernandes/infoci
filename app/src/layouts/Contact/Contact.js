@@ -51,7 +51,10 @@ class Contact extends Component {
       phone,
       email,
       id,
-      twitterHandle
+      twitterHandle,
+      snapchatHandle,
+      facebookHandle,
+      instagramHandle
     } = this.state.user;
 
     const name = `${firstName} ${lastName}`;
@@ -69,6 +72,7 @@ class Contact extends Component {
           <Header>{name}</Header>
           <p>Phone: {phone}</p>
           <p>Email: {email}</p>
+          <p>Twitter Handle: {twitterHandle}</p>
           <br/><br/>
           <hr className = "divider"/>
         </center>

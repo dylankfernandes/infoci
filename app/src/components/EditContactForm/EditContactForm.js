@@ -135,6 +135,58 @@ class ContactForm extends Component {
                 type = "email" />
             )}
           </Form.Item>
+          
+          <Form.Item label = "Website" colon = {false}>
+            {getFieldDecorator('website', {
+              initialValue: this.state.user.phone,
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Twitter Handle" colon = {false}>
+            {getFieldDecorator('twitterHandle', {
+              initialValue: this.state.user.twitterHandle,
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Facebook Handle" colon = {false}>
+            {getFieldDecorator('facebookHandle', {
+              initialValue: this.state.user.facebookHandle,
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Instagram Handle" colon = {false}>
+            {getFieldDecorator('instagramHandle', {
+              initialValue: this.state.user.instagramHandle,
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+          <Form.Item label = "Snapchat Handle" colon = {false}>
+            {getFieldDecorator('snapchatHandle', {
+              initialValue: this.state.user.snapchatHandle,
+              rules: [{
+                
+              }]
+            })(
+              <Input size = "large" className = "add-contact-input" />
+            )}
+          </Form.Item>
+
           <Form.Item>
             <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
           </Form.Item>
