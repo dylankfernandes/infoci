@@ -50,8 +50,7 @@ class Contact extends Component {
       lastName,
       phone,
       email,
-      id,
-      twitterHandle
+      id
     } = this.state.user;
 
     const name = `${firstName} ${lastName}`;

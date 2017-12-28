@@ -81,34 +81,91 @@ class ContactForm extends Component {
 
     return (
       <div>
-        <Form onSubmit = {this.handleSubmit}>
-          <Form.Item label = "First Name" colon = {false}>
-            {getFieldDecorator('firstName', {
-              rules: [{
-                required: true, message: "Please enter this person's first name"
-              }]
-            })(
-              <Input size = "large" className = "add-contact-input"/>
-            )}
-          </Form.Item>
-          <Form.Item label = "Last Name" colon = {false}>
-            {getFieldDecorator('lastName', {
-              rules: [{
-                required: true, message: "Please enter this person's last name"
-              }]
-            })(
-              <Input size = "large" className = "add-contact-input"/>
-            )}
-          </Form.Item>
-          <Form.Item label = "Email" colon = {false} hasFeedback>
-            {getFieldDecorator('email', {
-              rules: [{
-                type: 'email', message: 'The input is not a valid email!'
-              }]
-            })(
-              <Input size = "large" className = "add-contact-input" type = "email" />
-            )}
-          </Form.Item>
+        <Form onSubmit={this.handleSubmit} style={{ margin: 0 }}>
+          <Row style = {{ width : "100vw" }}>
+            <Col span = {8}>
+              <Form.Item label="First Name" colon={false}>
+                {getFieldDecorator('firstName', {
+                  rules: [{
+                    required: true, message: "Please enter this person's first name"
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" />
+                )}
+              </Form.Item>
+              <Form.Item label="Last Name" colon={false}>
+                {getFieldDecorator('lastName', {
+                  rules: [{
+                    required: true, message: "Please enter this person's last name"
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Email" colon={false} hasFeedback>
+                {getFieldDecorator('email', {
+                  rules: [{
+                    type: 'email', message: 'The input is not a valid email!'
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" type="email" />
+                  )}
+              </Form.Item>
+            </Col>
+            <Col span = {8}>
+              <Form.Item label="Twitter Handle" colon={false}>
+                {getFieldDecorator('twitterHandle', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Snapchat Handle" colon={false}>
+                {getFieldDecorator('snapchatHandle', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Instagram Handle" colon={false}>
+                {getFieldDecorator('instagramHandle', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Facebook Handle" colon={false}>
+                {getFieldDecorator('facebookHandle', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+            </Col>
+            <Col span = {8}>
+              <Form.Item label="Location" colon={false}>
+                {getFieldDecorator('location', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Relation" colon={false}>
+                {getFieldDecorator('relation', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Website" colon={false}>
+                {getFieldDecorator('website', {
+
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+            </Col>
+          </Row>
           <Form.Item>
             <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
           </Form.Item>
