@@ -6,6 +6,11 @@
   padding-bottom: 5vh;
 }
 
+.contact-name {
+  margin-top: 18vh;
+  align-self: right;
+}
+
 .edit-group {
   font-size: 16px;
 }
@@ -16,6 +21,11 @@
 
 .edit-button {
   float: right;
+}
+
+p, img {
+  float: right;
+  margin-right: 5vw;
 }
 
 .divider {

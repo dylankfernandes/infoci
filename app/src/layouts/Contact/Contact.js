@@ -13,6 +13,8 @@ import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
 
+const GOOGLE_MAPS_KEY = 'AIzaSyB4_MSG_e3MMO9f8VsuhWuRvEGK1ejk0lM';
+
 class Contact extends Component {
   constructor(props) {
     super(props);
@@ -45,15 +47,7 @@ class Contact extends Component {
   }
 
   render() {
-    const { 
-      firstName,
-      lastName,
-      phone,
-      email,
-      id
-    } = this.state.user;
-
-    const name = `${firstName} ${lastName}`;
+    const { user } = this.state;
 
     return (
       <div className = "contact-container">
@@ -61,17 +55,27 @@ class Contact extends Component {
           <center>
             <BackButton />
             <DeleteButton delete = {this.onDelete.bind(this)}/>
-            <EditButton id = {id} />
+            <EditButton id = {user.id} />
           </center>
         </div>
-        <center>
-          <Header>{name}</Header>
-          <p>Phone: {phone}</p>
-          <p>Email: {email}</p>
-          <br/><br/>
-          <hr className = "divider"/>
-        </center>
-        <br/><br/>
+        <br />
+        <Row>
+          <Col span = {12}>
+            <p><strong>Phone Number: </strong>{user.phone}</p>
+            <p><strong>Email: </strong>{user.email}</p>
+            <p><strong>Location: </strong>{user.location}</p>
+            <img
+              src="https://maps.googleapis.com/maps/api/staticmap?project=testgooglemaps&center=Bristow,VA&zoom=10&size=500x300&markers=color:blue|Bristow,VA&maptype=roadmap&key=AIzaSyDdv3FhVnk7sUY7eOaMOP_gj7ES9bXkrLg"
+            />
+            <br />
+          </Col>
+          <Col span={12}>
+            <div class="contact-name">
+              <Header>{user.firstName}</Header>
+              <Header>{user.lastName}</Header>
+            </div>
+          </Col>
+        </Row>
         {this.state.fireRedirect && (
           <Redirect to={'/'}/>
         )}

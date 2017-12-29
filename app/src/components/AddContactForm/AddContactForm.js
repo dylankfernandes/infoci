@@ -37,7 +37,7 @@ class ContactForm extends Component {
   }
 
   checkNull(property) {
-    return property ? property.toString() : "dylan"
+    return property ? property.toString() : "N/A"
   }
 
   handleSubmit = (e) => {
@@ -110,6 +110,13 @@ class ContactForm extends Component {
                 })(
                   <Input size="large" className="add-contact-input" type="email" />
                   )}
+              </Form.Item>
+              <Form.Item label="Phone Number" colon={false} hasFeedback>
+                {getFieldDecorator('phone', {
+                  
+                })(
+                  <Input size="large" className="add-contact-input" />
+                )}
               </Form.Item>
             </Col>
             <Col span = {8}>

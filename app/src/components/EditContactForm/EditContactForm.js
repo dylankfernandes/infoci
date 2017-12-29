@@ -96,47 +96,103 @@ class ContactForm extends Component {
 
     return (
       <div>
-        <Form onSubmit = {this.handleSubmit}>
-          <Form.Item label = "First Name" colon = {false}>
-            {getFieldDecorator('firstName', {
-              initialValue: this.state.user.firstName,
-              rules: [{
-                required: true, message: "Please enter this person's first name"
-              }]
-            })(
-              <Input 
-                size = "large" 
-                className = "add-contact-input" />
-            )}
-          </Form.Item>
-          <Form.Item label = "Last Name" colon = {false}>
-            {getFieldDecorator('lastName', {
-              initialValue: this.state.user.lastName,
-              rules: [{
-                required: true, message: "Please enter this person's last name"
-              }]
-            })(
-              <Input 
-                size = "large" 
-                className = "add-contact-input" />
-            )}
-          </Form.Item>
-          <Form.Item label = "Email" colon = {false} hasFeedback>
-            {getFieldDecorator('email', {
-              initialValue: this.state.user.email,
-              rules: [{
-                type: 'email', message: 'The input is not a valid email!'
-              }],
-              setFieldsValue: 'First name'
-            })(
-              <Input 
-                size = "large" 
-                className = "add-contact-input" 
-                type = "email" />
-            )}
-          </Form.Item>
+        <Form onSubmit={this.handleSubmit} style={{ margin: 0 }}>
+          <Row style={{ width: "100vw" }}>
+            <Col span={8}>
+              <Form.Item label="First Name" colon={false}>
+                {getFieldDecorator('firstName', {
+                  initialValue: this.state.user.firstName,
+                  rules: [{
+                    required: true, message: "Please enter this person's first name"
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Last Name" colon={false}>
+                {getFieldDecorator('lastName', {
+                  initialValue: this.state.user.lastName,
+                  rules: [{
+                    required: true, message: "Please enter this person's last name"
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Email" colon={false} hasFeedback>
+                {getFieldDecorator('email', {
+                  initialValue: this.state.user.email,
+                  rules: [{
+                    type: 'email', message: 'The input is not a valid email!'
+                  }]
+                })(
+                  <Input size="large" className="add-contact-input" type="email" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Phone Number" colon={false} hasFeedback>
+                {getFieldDecorator('phone', {
+                  initialValue: this.state.user.phone
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+            </Col>
+            <Col span={8}>
+              <Form.Item label="Twitter Handle" colon={false}>
+                {getFieldDecorator('twitterHandle', {
+                  initialValue: this.state.user.twitterHandle,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Snapchat Handle" colon={false}>
+                {getFieldDecorator('snapchatHandle', {
+                  initialValue: this.state.user.snapchatHandle,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Instagram Handle" colon={false}>
+                {getFieldDecorator('instagramHandle', {
+                  initialValue: this.state.user.instagramHandle,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Facebook Handle" colon={false}>
+                {getFieldDecorator('facebookHandle', {
+                  initialValue: this.state.user.facebookHandle,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+            </Col>
+            <Col span={8}>
+              <Form.Item label="Location" colon={false}>
+                {getFieldDecorator('location', {
+                  initialValue: this.state.user.location,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Relation" colon={false}>
+                {getFieldDecorator('relation', {
+                  initialValue: this.state.user.relation,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+              <Form.Item label="Website" colon={false}>
+                {getFieldDecorator('website', {
+                  initialValue: this.state.user.website,
+                })(
+                  <Input size="large" className="add-contact-input" />
+                  )}
+              </Form.Item>
+            </Col>
+          </Row>
           <Form.Item>
-            <Button size = "large" type = "primary" htmlType = "submit">Create Contacts</Button>
+            <Button size="large" type="primary" htmlType="submit">Create Contacts</Button>
           </Form.Item>
         </Form>
         {this.state.fireRedirect && (
