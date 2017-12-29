@@ -9,6 +9,10 @@ import {
   EditButton
 } from '../../components/Button/Button';
 
+import ContactHeader from './ContactHeader';
+import ContactMedia from './ContactMedia';
+import ContactLocation from './ContactLocation';
+
 import Header from '../../components/Header/Header';
 import BASE_URL from '../../config';
 import './styles.css';
@@ -48,7 +52,7 @@ class Contact extends Component {
 
   render() {
     const { user } = this.state;
-
+    
     return (
       <div className = "contact-container">
         <div className = "edit-group">
@@ -61,19 +65,19 @@ class Contact extends Component {
         <br />
         <Row>
           <Col span = {12}>
-            <p><strong>Phone Number: </strong>{user.phone}</p>
-            <p><strong>Email: </strong>{user.email}</p>
-            <p><strong>Location: </strong>{user.location}</p>
-            <img
-              src="https://maps.googleapis.com/maps/api/staticmap?project=testgooglemaps&center=Bristow,VA&zoom=10&size=500x300&markers=color:blue|Bristow,VA&maptype=roadmap&key=AIzaSyDdv3FhVnk7sUY7eOaMOP_gj7ES9bXkrLg"
-            />
+            <p className = "float-left"><strong>Phone Number: </strong>{user.phone}</p>
+            <p className="float-right"><strong>Email: </strong>{user.email}</p>
+            <br />
+            <center>
+              <ContactLocation user={user} />
+              <p><strong>Location: </strong>{user.location}</p>
+              <ContactMedia user={user} />  
+            </center>
+            <br />
             <br />
           </Col>
           <Col span={12}>
-            <div class="contact-name">
-              <Header>{user.firstName}</Header>
-              <Header>{user.lastName}</Header>
-            </div>
+            <ContactHeader user={user} />
           </Col>
         </Row>
         {this.state.fireRedirect && (

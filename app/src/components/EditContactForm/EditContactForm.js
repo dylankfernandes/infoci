@@ -159,13 +159,6 @@ class ContactForm extends Component {
                   <Input size="large" className="add-contact-input" />
                   )}
               </Form.Item>
-              <Form.Item label="Facebook Handle" colon={false}>
-                {getFieldDecorator('facebookHandle', {
-                  initialValue: this.state.user.facebookHandle,
-                })(
-                  <Input size="large" className="add-contact-input" />
-                  )}
-              </Form.Item>
             </Col>
             <Col span={8}>
               <Form.Item label="Location" colon={false}>

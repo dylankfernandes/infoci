@@ -23,12 +23,19 @@
   float: right;
 }
 
-p, img {
+.social-media-group img {
+  margin-right: 10px;
+}
+
+.float-right {
   float: right;
   margin-right: 5vw;
 }
 
-.divider {
-  width: 75%;
-  color: lightgray;
+.float-left {
+  float: left;
+}
+
+.social-media-group button {
+  margin: 10px;
 }
