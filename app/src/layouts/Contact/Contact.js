@@ -64,7 +64,7 @@ class Contact extends Component {
         </div>
         <br />
         <Row>
-          <Col span = {12}>
+          <Col span = {14}>
             <p className = "float-left"><strong>Phone Number: </strong>{user.phone}</p>
             <p className="float-right"><strong>Email: </strong>{user.email}</p>
             <br />
@@ -76,7 +76,7 @@ class Contact extends Component {
             <br />
             <br />
           </Col>
-          <Col span={12}>
+          <Col span={10}>
             <ContactHeader user={user} />
           </Col>
         </Row>
